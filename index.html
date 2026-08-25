@@ -401,6 +401,23 @@ h1 {
   background: var(--warn-weekly-soft);
   color: var(--warn-weekly);
 }
+.row-family-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: -2px;
+}
+.tag.family-tag {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+.tag.family-tag-multi {
+  background: var(--rise-soft);
+  border: 1px solid var(--rise);
+  color: var(--rise);
+  font-weight: 600;
+}
 .tag.verdict-bull {
   background: var(--rise-soft);
   color: var(--rise);
@@ -694,12 +711,12 @@ h1 {
       <div class="stat-value mono">408</div>
     </div>
     <div class="stat">
-      <div class="stat-label">符合條件（底背離6／超賣0／支撐3／MACD交叉6／收腳6／MACD背離6／週線背離0／MACD翻紅站上MA206）</div>
-      <div class="stat-value mono accent">33</div>
+      <div class="stat-label">符合條件（底背離6／超賣0／支撐3／MACD家族6／週線背離0）</div>
+      <div class="stat-value mono accent">15</div>
     </div>
     <div class="stat">
       <div class="stat-label">平均歷史命中率</div>
-      <div class="stat-value mono">91%</div>
+      <div class="stat-value mono">98%</div>
     </div>
     <div class="stat">
       <div class="stat-label">掃描失敗檔數</div>
@@ -723,6 +740,7 @@ h1 {
         <span class="tag verdict-bull">多方共振</span>
         
       </div>
+      
       <div class="row-mid">
         <div class="winrate">
           <div class="winrate-track"><div class="winrate-fill" style="width:100%"></div></div>
@@ -758,6 +776,7 @@ h1 {
         <span class="tag verdict-mixed">指標打架(觀望)</span>
         
       </div>
+      
       <div class="row-mid">
         <div class="winrate">
           <div class="winrate-track"><div class="winrate-fill" style="width:100%"></div></div>
@@ -793,6 +812,7 @@ h1 {
         <span class="tag verdict-mixed">指標打架(觀望)</span>
         
       </div>
+      
       <div class="row-mid">
         <div class="winrate">
           <div class="winrate-track"><div class="winrate-fill" style="width:100%"></div></div>
@@ -828,6 +848,7 @@ h1 {
         <span class="tag verdict-bull">多方共振</span>
         
       </div>
+      
       <div class="row-mid">
         <div class="winrate">
           <div class="winrate-track"><div class="winrate-fill" style="width:100%"></div></div>
@@ -863,6 +884,7 @@ h1 {
         <span class="tag verdict-mixed">指標打架(觀望)</span>
         
       </div>
+      
       <div class="row-mid">
         <div class="winrate">
           <div class="winrate-track"><div class="winrate-fill" style="width:100%"></div></div>
@@ -898,6 +920,7 @@ h1 {
         <span class="tag verdict-bull">多方共振</span>
         
       </div>
+      
       <div class="row-mid">
         <div class="winrate">
           <div class="winrate-track"><div class="winrate-fill" style="width:90%"></div></div>
@@ -966,6 +989,7 @@ h1 {
         <span class="tag verdict-mixed">指標打架(觀望)</span>
         
       </div>
+      
       <div class="row-mid">
         <div class="winrate">
           <div class="winrate-track"><div class="winrate-fill" style="width:100%"></div></div>
@@ -999,6 +1023,7 @@ h1 {
         <span class="tag verdict-bull">多方共振</span>
         
       </div>
+      
       <div class="row-mid">
         <div class="winrate">
           <div class="winrate-track"><div class="winrate-fill" style="width:100%"></div></div>
@@ -1032,6 +1057,7 @@ h1 {
         <span class="tag verdict-bull">多方共振</span>
         
       </div>
+      
       <div class="row-mid">
         <div class="winrate">
           <div class="winrate-track"><div class="winrate-fill" style="width:75%"></div></div>
@@ -1064,415 +1090,7 @@ h1 {
           <p>今天無候選。</p>
           <p class="empty-sub">訊號本身稀有且門檻嚴格，掛零是正常結果，不代表程式沒跑。</p>
         </div>
-    </section></div><div class="strategy-label">MACD+RSI雙黃金交叉<span class="strategy-hint">MACD黃金交叉跟RSI黃金交叉(RSI穿越自己的均線)要在幾個交易日內都發生，兩個指標互相驗證</span></div><div class="tier-pair">
-    <section class="tier-section">
-      <div class="section-label">短期新鮮<span class="section-hint">反轉剛確認，最接近進場點</span></div>
-      
-        <ul class="list">
-          
-    <li class="row">
-      <div class="row-head">
-        <span class="rank">01</span>
-        <span class="symbol">INJUSDT</span>
-        <span class="fresh-tag">5天前（2026-08-20）</span>
-      </div>
-      <div class="row-tags">
-        <span class="tag verdict-bull">多方共振</span>
-        
-      </div>
-      <div class="row-mid">
-        <div class="winrate">
-          <div class="winrate-track"><div class="winrate-fill" style="width:89%"></div></div>
-          <span class="winrate-label">89%<small>／28次</small></span>
-        </div>
-        <div class="latest">
-          <span class="latest-price">5.992</span>
-          <span class="latest-rsi">RSI 74</span>
-        </div>
-      </div>
-      <div class="row-bottom">
-        <div class="lows">
-        <div class="low-pair">
-          <span class="low-date">MACD交叉 08-20</span>
-          <span class="arrow">+</span>
-          <span class="low-date">RSI交叉 08-19</span>
-          <span class="delta-tag rsi-up">收盤 4.771</span>
-        </div></div>
-      </div>
-      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
-    </li>
-
-    <li class="row">
-      <div class="row-head">
-        <span class="rank">02</span>
-        <span class="symbol">SUIUSDT</span>
-        <span class="fresh-tag">6天前（2026-08-19）</span>
-      </div>
-      <div class="row-tags">
-        <span class="tag verdict-bull">多方共振</span>
-        
-      </div>
-      <div class="row-mid">
-        <div class="winrate">
-          <div class="winrate-track"><div class="winrate-fill" style="width:88%"></div></div>
-          <span class="winrate-label">88%<small>／24次</small></span>
-        </div>
-        <div class="latest">
-          <span class="latest-price">0.8078</span>
-          <span class="latest-rsi">RSI 65</span>
-        </div>
-      </div>
-      <div class="row-bottom">
-        <div class="lows">
-        <div class="low-pair">
-          <span class="low-date">MACD交叉 08-19</span>
-          <span class="arrow">+</span>
-          <span class="low-date">RSI交叉 08-19</span>
-          <span class="delta-tag rsi-up">收盤 0.706</span>
-        </div></div>
-      </div>
-      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
-    </li>
-
-    <li class="row">
-      <div class="row-head">
-        <span class="rank">03</span>
-        <span class="symbol">ZROUSDT</span>
-        <span class="fresh-tag">6天前（2026-08-19）</span>
-      </div>
-      <div class="row-tags">
-        <span class="tag verdict-bull">多方共振</span>
-        
-      </div>
-      <div class="row-mid">
-        <div class="winrate">
-          <div class="winrate-track"><div class="winrate-fill" style="width:88%"></div></div>
-          <span class="winrate-label">88%<small>／16次</small></span>
-        </div>
-        <div class="latest">
-          <span class="latest-price">1.085</span>
-          <span class="latest-rsi">RSI 68</span>
-        </div>
-      </div>
-      <div class="row-bottom">
-        <div class="lows">
-        <div class="low-pair">
-          <span class="low-date">MACD交叉 08-19</span>
-          <span class="arrow">+</span>
-          <span class="low-date">RSI交叉 08-19</span>
-          <span class="delta-tag rsi-up">收盤 0.859</span>
-        </div></div>
-      </div>
-      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
-    </li>
-
-    <li class="row">
-      <div class="row-head">
-        <span class="rank">04</span>
-        <span class="symbol">CELOUSDT</span>
-        <span class="fresh-tag">6天前（2026-08-19）</span>
-      </div>
-      <div class="row-tags">
-        <span class="tag verdict-bull">多方共振</span>
-        
-      </div>
-      <div class="row-mid">
-        <div class="winrate">
-          <div class="winrate-track"><div class="winrate-fill" style="width:86%"></div></div>
-          <span class="winrate-label">86%<small>／21次</small></span>
-        </div>
-        <div class="latest">
-          <span class="latest-price">0.07755</span>
-          <span class="latest-rsi">RSI 83</span>
-        </div>
-      </div>
-      <div class="row-bottom">
-        <div class="lows">
-        <div class="low-pair">
-          <span class="low-date">MACD交叉 08-19</span>
-          <span class="arrow">+</span>
-          <span class="low-date">RSI交叉 08-17</span>
-          <span class="delta-tag rsi-up">收盤 0.06253</span>
-        </div></div>
-      </div>
-      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
-    </li>
-
-    <li class="row">
-      <div class="row-head">
-        <span class="rank">05</span>
-        <span class="symbol">SKYUSDT</span>
-        <span class="fresh-tag">7天前（2026-08-18）</span>
-      </div>
-      <div class="row-tags">
-        <span class="tag verdict-bull">多方共振</span>
-        
-      </div>
-      <div class="row-mid">
-        <div class="winrate">
-          <div class="winrate-track"><div class="winrate-fill" style="width:86%"></div></div>
-          <span class="winrate-label">86%<small>／7次</small></span>
-        </div>
-        <div class="latest">
-          <span class="latest-price">0.06988</span>
-          <span class="latest-rsi">RSI 79</span>
-        </div>
-      </div>
-      <div class="row-bottom">
-        <div class="lows">
-        <div class="low-pair">
-          <span class="low-date">MACD交叉 08-18</span>
-          <span class="arrow">+</span>
-          <span class="low-date">RSI交叉 08-16</span>
-          <span class="delta-tag rsi-up">收盤 0.0561</span>
-        </div></div>
-      </div>
-      <div class="row-aux"><span class="aux-item">KD 高檔鈍化</span><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
-    </li>
-
-    <li class="row">
-      <div class="row-head">
-        <span class="rank">06</span>
-        <span class="symbol">ROSEUSDT</span>
-        <span class="fresh-tag">6天前（2026-08-19）</span>
-      </div>
-      <div class="row-tags">
-        <span class="tag verdict-bull">多方共振</span>
-        
-      </div>
-      <div class="row-mid">
-        <div class="winrate">
-          <div class="winrate-track"><div class="winrate-fill" style="width:84%"></div></div>
-          <span class="winrate-label">84%<small>／19次</small></span>
-        </div>
-        <div class="latest">
-          <span class="latest-price">0.00615</span>
-          <span class="latest-rsi">RSI 63</span>
-        </div>
-      </div>
-      <div class="row-bottom">
-        <div class="lows">
-        <div class="low-pair">
-          <span class="low-date">MACD交叉 08-19</span>
-          <span class="arrow">+</span>
-          <span class="low-date">RSI交叉 08-19</span>
-          <span class="delta-tag rsi-up">收盤 0.00557</span>
-        </div></div>
-      </div>
-      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
-    </li>
-        </ul>
-    </section>
-    <section class="tier-section">
-      <div class="section-label">長期新鮮<span class="section-hint">追價前先看還有沒有空間</span></div>
-      
-        <div class="empty">
-          <div class="empty-mark">—</div>
-          <p>今天無候選。</p>
-          <p class="empty-sub">訊號本身稀有且門檻嚴格，掛零是正常結果，不代表程式沒跑。</p>
-        </div>
-    </section></div><div class="strategy-label">MACD柱狀體收腳(止跌)<span class="strategy-hint">柱狀體連續同號且絕對值一天比一天小，代表空頭動能正在衰竭，是止跌訊號</span></div><div class="tier-pair">
-    <section class="tier-section">
-      <div class="section-label">短期新鮮<span class="section-hint">反轉剛確認，最接近進場點</span></div>
-      
-        <ul class="list">
-          
-    <li class="row">
-      <div class="row-head">
-        <span class="rank">01</span>
-        <span class="symbol">ZAMAUSDT</span>
-        <span class="fresh-tag">5天前（2026-08-20）</span>
-      </div>
-      <div class="row-tags">
-        <span class="tag verdict-bull">多方共振</span>
-        
-      </div>
-      <div class="row-mid">
-        <div class="winrate">
-          <div class="winrate-track"><div class="winrate-fill" style="width:100%"></div></div>
-          <span class="winrate-label">100%<small>／4次</small></span>
-        </div>
-        <div class="latest">
-          <span class="latest-price">0.05926</span>
-          <span class="latest-rsi">RSI 72</span>
-        </div>
-      </div>
-      <div class="row-bottom">
-        <div class="lows">
-        <div class="low-pair">
-          <span class="low-date">收腳確認 08-20</span>
-          <span class="low-price down">0.04631</span>
-          <span class="delta-tag rsi-up">柱狀體 -0.0006096</span>
-        </div></div>
-      </div>
-      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
-    </li>
-
-    <li class="row">
-      <div class="row-head">
-        <span class="rank">02</span>
-        <span class="symbol">SSVUSDT</span>
-        <span class="fresh-tag">9天前（2026-08-16）</span>
-      </div>
-      <div class="row-tags">
-        <span class="tag verdict-bull">多方共振</span>
-        
-      </div>
-      <div class="row-mid">
-        <div class="winrate">
-          <div class="winrate-track"><div class="winrate-fill" style="width:81%"></div></div>
-          <span class="winrate-label">81%<small>／31次</small></span>
-        </div>
-        <div class="latest">
-          <span class="latest-price">2.66</span>
-          <span class="latest-rsi">RSI 75</span>
-        </div>
-      </div>
-      <div class="row-bottom">
-        <div class="lows">
-        <div class="low-pair">
-          <span class="low-date">收腳確認 08-16</span>
-          <span class="low-price down">2.137</span>
-          <span class="delta-tag rsi-up">柱狀體 -0.00182886</span>
-        </div></div>
-      </div>
-      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
-    </li>
-
-    <li class="row">
-      <div class="row-head">
-        <span class="rank">03</span>
-        <span class="symbol">SAGAUSDT</span>
-        <span class="fresh-tag">6天前（2026-08-19）</span>
-      </div>
-      <div class="row-tags">
-        <span class="tag verdict-bull">多方共振</span>
-        
-      </div>
-      <div class="row-mid">
-        <div class="winrate">
-          <div class="winrate-track"><div class="winrate-fill" style="width:76%"></div></div>
-          <span class="winrate-label">76%<small>／25次</small></span>
-        </div>
-        <div class="latest">
-          <span class="latest-price">0.0151</span>
-          <span class="latest-rsi">RSI 58</span>
-        </div>
-      </div>
-      <div class="row-bottom">
-        <div class="lows">
-        <div class="low-pair">
-          <span class="low-date">收腳確認 08-19</span>
-          <span class="low-price down">0.01363</span>
-          <span class="delta-tag rsi-up">柱狀體 -0.00007542</span>
-        </div></div>
-      </div>
-      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
-    </li>
-
-    <li class="row">
-      <div class="row-head">
-        <span class="rank">04</span>
-        <span class="symbol">ZKPUSDT</span>
-        <span class="fresh-tag">6天前（2026-08-19）</span>
-      </div>
-      <div class="row-tags">
-        <span class="tag verdict-mixed">指標打架(觀望)</span>
-        <span class="tag warning-tag">日線警示 MACD多頭收腳(2026-08-25)</span>
-      </div>
-      <div class="row-mid">
-        <div class="winrate">
-          <div class="winrate-track"><div class="winrate-fill" style="width:75%"></div></div>
-          <span class="winrate-label">75%<small>／4次</small></span>
-        </div>
-        <div class="latest">
-          <span class="latest-price">0.0419</span>
-          <span class="latest-rsi">RSI 48</span>
-        </div>
-      </div>
-      <div class="row-bottom">
-        <div class="lows">
-        <div class="low-pair">
-          <span class="low-date">收腳確認 08-19</span>
-          <span class="low-price down">0.0408</span>
-          <span class="delta-tag rsi-up">柱狀體 -0.00027401</span>
-        </div></div>
-      </div>
-      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸下方(中線偏空)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價跌(空方賣壓)</span></div>
-    </li>
-
-    <li class="row">
-      <div class="row-head">
-        <span class="rank">05</span>
-        <span class="symbol">ARBUSDT</span>
-        <span class="fresh-tag">7天前（2026-08-18）</span>
-      </div>
-      <div class="row-tags">
-        <span class="tag verdict-bull">多方共振</span>
-        
-      </div>
-      <div class="row-mid">
-        <div class="winrate">
-          <div class="winrate-track"><div class="winrate-fill" style="width:72%"></div></div>
-          <span class="winrate-label">72%<small>／32次</small></span>
-        </div>
-        <div class="latest">
-          <span class="latest-price">0.0972</span>
-          <span class="latest-rsi">RSI 70</span>
-        </div>
-      </div>
-      <div class="row-bottom">
-        <div class="lows">
-        <div class="low-pair">
-          <span class="low-date">收腳確認 08-18</span>
-          <span class="low-price down">0.0753</span>
-          <span class="delta-tag rsi-up">柱狀體 -0.00019522</span>
-        </div></div>
-      </div>
-      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
-    </li>
-
-    <li class="row">
-      <div class="row-head">
-        <span class="rank">06</span>
-        <span class="symbol">HEIUSDT</span>
-        <span class="fresh-tag">0天前（2026-08-25）</span>
-      </div>
-      <div class="row-tags">
-        <span class="tag verdict-bull">多方共振</span>
-        
-      </div>
-      <div class="row-mid">
-        <div class="winrate">
-          <div class="winrate-track"><div class="winrate-fill" style="width:71%"></div></div>
-          <span class="winrate-label">71%<small>／17次</small></span>
-        </div>
-        <div class="latest">
-          <span class="latest-price">0.1278</span>
-          <span class="latest-rsi">RSI 46</span>
-        </div>
-      </div>
-      <div class="row-bottom">
-        <div class="lows">
-        <div class="low-pair">
-          <span class="low-date">收腳確認 08-25</span>
-          <span class="low-price down">0.1278</span>
-          <span class="delta-tag rsi-up">柱狀體 -0.00293814</span>
-        </div></div>
-      </div>
-      <div class="row-aux"><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 量縮</span><span class="aux-item">量縮價跌(賣壓減輕)</span></div>
-    </li>
-        </ul>
-    </section>
-    <section class="tier-section">
-      <div class="section-label">長期新鮮<span class="section-hint">追價前先看還有沒有空間</span></div>
-      
-        <div class="empty">
-          <div class="empty-mark">—</div>
-          <p>今天無候選。</p>
-          <p class="empty-sub">訊號本身稀有且門檻嚴格，掛零是正常結果，不代表程式沒跑。</p>
-        </div>
-    </section></div><div class="strategy-label">MACD底背離<span class="strategy-hint">幣價創低、但柱狀體沒跟著創低，代表空頭動能減弱，準備反彈</span></div><div class="tier-pair">
+    </section></div><div class="strategy-label">MACD家族（雙金叉／收腳／底背離／翻紅站上MA20）<span class="strategy-hint">四套都是MACD衍生指標，同一幣同時中多套時卡片會合併顯示、標籤標出命中了哪幾套——當強化訊號參考，不是四個獨立機會</span></div><div class="tier-pair">
     <section class="tier-section">
       <div class="section-label">短期新鮮<span class="section-hint">反轉剛確認，最接近進場點</span></div>
       
@@ -1488,6 +1106,7 @@ h1 {
         <span class="tag verdict-mixed">指標打架(觀望)</span>
         
       </div>
+      <div class="row-family-tags"><span class="tag family-tag">MACD底背離 100%</span></div>
       <div class="row-mid">
         <div class="winrate">
           <div class="winrate-track"><div class="winrate-fill" style="width:100%"></div></div>
@@ -1522,6 +1141,7 @@ h1 {
         <span class="tag verdict-bull">多方共振</span>
         
       </div>
+      <div class="row-family-tags"><span class="tag family-tag">MACD底背離 100%</span></div>
       <div class="row-mid">
         <div class="winrate">
           <div class="winrate-track"><div class="winrate-fill" style="width:100%"></div></div>
@@ -1556,6 +1176,7 @@ h1 {
         <span class="tag verdict-mixed">指標打架(觀望)</span>
         
       </div>
+      <div class="row-family-tags"><span class="tag family-tag">MACD底背離 100%</span></div>
       <div class="row-mid">
         <div class="winrate">
           <div class="winrate-track"><div class="winrate-fill" style="width:100%"></div></div>
@@ -1590,6 +1211,7 @@ h1 {
         <span class="tag verdict-mixed">指標打架(觀望)</span>
         
       </div>
+      <div class="row-family-tags"><span class="tag family-tag">MACD底背離 100%</span></div>
       <div class="row-mid">
         <div class="winrate">
           <div class="winrate-track"><div class="winrate-fill" style="width:100%"></div></div>
@@ -1617,98 +1239,6 @@ h1 {
     <li class="row">
       <div class="row-head">
         <span class="rank">05</span>
-        <span class="symbol">IOUSDT</span>
-        <span class="fresh-tag">6天前（2026-08-19）</span>
-      </div>
-      <div class="row-tags">
-        <span class="tag verdict-bull">多方共振</span>
-        
-      </div>
-      <div class="row-mid">
-        <div class="winrate">
-          <div class="winrate-track"><div class="winrate-fill" style="width:91%"></div></div>
-          <span class="winrate-label">91%<small>／11次</small></span>
-        </div>
-        <div class="latest">
-          <span class="latest-price">0.1419</span>
-          <span class="latest-rsi">RSI 71</span>
-        </div>
-      </div>
-      <div class="row-bottom">
-        <div class="lows">
-        <div class="low-pair">
-          <span class="low-date">07-19</span>
-          <span class="low-price">0.1427</span>
-          <span class="arrow">→</span>
-          <span class="low-date">08-14</span>
-          <span class="low-price down">0.1107</span>
-          <span class="delta-tag price-down">價 -22.4%</span>
-        </div></div>
-      </div>
-      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
-    </li>
-
-    <li class="row">
-      <div class="row-head">
-        <span class="rank">06</span>
-        <span class="symbol">NMRUSDT</span>
-        <span class="fresh-tag">2天前（2026-08-23）</span>
-      </div>
-      <div class="row-tags">
-        <span class="tag verdict-bull">多方共振</span>
-        <span class="tag warning-tag-weekly">週線警示 週RSI頂背離(2026-08-23)</span>
-      </div>
-      <div class="row-mid">
-        <div class="winrate">
-          <div class="winrate-track"><div class="winrate-fill" style="width:89%"></div></div>
-          <span class="winrate-label">89%<small>／9次</small></span>
-        </div>
-        <div class="latest">
-          <span class="latest-price">9.18</span>
-          <span class="latest-rsi">RSI 67</span>
-        </div>
-      </div>
-      <div class="row-bottom">
-        <div class="lows">
-        <div class="low-pair">
-          <span class="low-date">07-29</span>
-          <span class="low-price">8.24</span>
-          <span class="arrow">→</span>
-          <span class="low-date">08-18</span>
-          <span class="low-price down">7.87</span>
-          <span class="delta-tag price-down">價 -4.5%</span>
-        </div></div>
-      </div>
-      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
-    </li>
-        </ul>
-    </section>
-    <section class="tier-section">
-      <div class="section-label">長期新鮮<span class="section-hint">追價前先看還有沒有空間</span></div>
-      
-        <div class="empty">
-          <div class="empty-mark">—</div>
-          <p>今天無候選。</p>
-          <p class="empty-sub">訊號本身稀有且門檻嚴格，掛零是正常結果，不代表程式沒跑。</p>
-        </div>
-    </section></div><div class="strategy-label">週線底背離<span class="strategy-hint">跟策略一同一套底背離邏輯，只是用週K代替日K，候選會非常稀少</span></div>
-    <section class="tier-section">
-      <div class="section-label">訊號新鮮<span class="section-hint">沒有分短期/長期兩層，只有這一層</span></div>
-      
-        <div class="empty">
-          <div class="empty-mark">—</div>
-          <p>今天無候選。</p>
-          <p class="empty-sub">訊號本身稀有且門檻嚴格，掛零是正常結果，不代表程式沒跑。</p>
-        </div>
-    </section><div class="strategy-label">MACD翻紅站上MA20<span class="strategy-hint">柱狀體由空轉多(翻紅)當天收盤價同時站上20日均線，代表短期動能剛轉強</span></div><div class="tier-pair">
-    <section class="tier-section">
-      <div class="section-label">短期新鮮<span class="section-hint">反轉剛確認，最接近進場點</span></div>
-      
-        <ul class="list">
-          
-    <li class="row">
-      <div class="row-head">
-        <span class="rank">01</span>
         <span class="symbol">RUNEUSDT</span>
         <span class="fresh-tag">4天前（2026-08-21）</span>
       </div>
@@ -1716,6 +1246,7 @@ h1 {
         <span class="tag verdict-bull">多方共振</span>
         
       </div>
+      <div class="row-family-tags"><span class="tag family-tag">MACD翻紅站上MA20 100%</span></div>
       <div class="row-mid">
         <div class="winrate">
           <div class="winrate-track"><div class="winrate-fill" style="width:100%"></div></div>
@@ -1741,150 +1272,19 @@ h1 {
 
     <li class="row">
       <div class="row-head">
-        <span class="rank">02</span>
-        <span class="symbol">INJUSDT</span>
-        <span class="fresh-tag">5天前（2026-08-20）</span>
-      </div>
-      <div class="row-tags">
-        <span class="tag verdict-bull">多方共振</span>
-        
-      </div>
-      <div class="row-mid">
-        <div class="winrate">
-          <div class="winrate-track"><div class="winrate-fill" style="width:95%"></div></div>
-          <span class="winrate-label">95%<small>／20次</small></span>
-        </div>
-        <div class="latest">
-          <span class="latest-price">5.992</span>
-          <span class="latest-rsi">RSI 74</span>
-        </div>
-      </div>
-      <div class="row-bottom">
-        <div class="lows">
-        <div class="low-pair">
-          <span class="low-date">柱狀體翻紅 08-20</span>
-          <span class="low-price">4.771</span>
-          <span class="arrow">站上</span>
-          <span class="low-price down">MA20 4.5396</span>
-          <span class="delta-tag rsi-up">柱狀體 0.02393</span>
-        </div></div>
-      </div>
-      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
-    </li>
-
-    <li class="row">
-      <div class="row-head">
-        <span class="rank">03</span>
-        <span class="symbol">ZRXUSDT</span>
-        <span class="fresh-tag">5天前（2026-08-20）</span>
-      </div>
-      <div class="row-tags">
-        <span class="tag verdict-bull">多方共振</span>
-        
-      </div>
-      <div class="row-mid">
-        <div class="winrate">
-          <div class="winrate-track"><div class="winrate-fill" style="width:93%"></div></div>
-          <span class="winrate-label">93%<small>／15次</small></span>
-        </div>
-        <div class="latest">
-          <span class="latest-price">0.0986</span>
-          <span class="latest-rsi">RSI 79</span>
-        </div>
-      </div>
-      <div class="row-bottom">
-        <div class="lows">
-        <div class="low-pair">
-          <span class="low-date">柱狀體翻紅 08-20</span>
-          <span class="low-price">0.0855</span>
-          <span class="arrow">站上</span>
-          <span class="low-price down">MA20 0.07889</span>
-          <span class="delta-tag rsi-up">柱狀體 0.00056991</span>
-        </div></div>
-      </div>
-      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
-    </li>
-
-    <li class="row">
-      <div class="row-head">
-        <span class="rank">04</span>
-        <span class="symbol">FORMUSDT</span>
-        <span class="fresh-tag">5天前（2026-08-20）</span>
-      </div>
-      <div class="row-tags">
-        <span class="tag verdict-bull">多方共振</span>
-        
-      </div>
-      <div class="row-mid">
-        <div class="winrate">
-          <div class="winrate-track"><div class="winrate-fill" style="width:90%"></div></div>
-          <span class="winrate-label">90%<small>／10次</small></span>
-        </div>
-        <div class="latest">
-          <span class="latest-price">0.2559</span>
-          <span class="latest-rsi">RSI 68</span>
-        </div>
-      </div>
-      <div class="row-bottom">
-        <div class="lows">
-        <div class="low-pair">
-          <span class="low-date">柱狀體翻紅 08-20</span>
-          <span class="low-price">0.2467</span>
-          <span class="arrow">站上</span>
-          <span class="low-price down">MA20 0.213185</span>
-          <span class="delta-tag rsi-up">柱狀體 0.00152564</span>
-        </div></div>
-      </div>
-      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
-    </li>
-
-    <li class="row">
-      <div class="row-head">
-        <span class="rank">05</span>
-        <span class="symbol">HOLOUSDT</span>
-        <span class="fresh-tag">3天前（2026-08-22）</span>
-      </div>
-      <div class="row-tags">
-        <span class="tag verdict-mixed">指標打架(觀望)</span>
-        
-      </div>
-      <div class="row-mid">
-        <div class="winrate">
-          <div class="winrate-track"><div class="winrate-fill" style="width:88%"></div></div>
-          <span class="winrate-label">88%<small>／8次</small></span>
-        </div>
-        <div class="latest">
-          <span class="latest-price">0.072</span>
-          <span class="latest-rsi">RSI 40</span>
-        </div>
-      </div>
-      <div class="row-bottom">
-        <div class="lows">
-        <div class="low-pair">
-          <span class="low-date">柱狀體翻紅 08-22</span>
-          <span class="low-price">0.0666</span>
-          <span class="arrow">站上</span>
-          <span class="low-price down">MA20 0.065735</span>
-          <span class="delta-tag rsi-up">柱狀體 0.00006142</span>
-        </div></div>
-      </div>
-      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸下方(中線偏空)</span><span class="aux-item">量能 量縮</span><span class="aux-item">量縮價漲(空方背離)</span></div>
-    </li>
-
-    <li class="row">
-      <div class="row-head">
         <span class="rank">06</span>
         <span class="symbol">ZAMAUSDT</span>
-        <span class="fresh-tag">3天前（2026-08-22）</span>
+        <span class="fresh-tag">5天前（2026-08-20）</span>
       </div>
       <div class="row-tags">
         <span class="tag verdict-bull">多方共振</span>
         
       </div>
+      <div class="row-family-tags"><span class="tag family-tag family-tag-multi">MACD柱狀體收腳(止跌) 100%</span><span class="tag family-tag family-tag-multi">MACD翻紅站上MA20 88%</span></div>
       <div class="row-mid">
         <div class="winrate">
-          <div class="winrate-track"><div class="winrate-fill" style="width:88%"></div></div>
-          <span class="winrate-label">88%<small>／8次</small></span>
+          <div class="winrate-track"><div class="winrate-fill" style="width:100%"></div></div>
+          <span class="winrate-label">100%<small>／4次</small></span>
         </div>
         <div class="latest">
           <span class="latest-price">0.05926</span>
@@ -1894,11 +1294,9 @@ h1 {
       <div class="row-bottom">
         <div class="lows">
         <div class="low-pair">
-          <span class="low-date">柱狀體翻紅 08-22</span>
-          <span class="low-price">0.05282</span>
-          <span class="arrow">站上</span>
-          <span class="low-price down">MA20 0.047036</span>
-          <span class="delta-tag rsi-up">柱狀體 0.00039445</span>
+          <span class="low-date">收腳確認 08-20</span>
+          <span class="low-price down">0.04631</span>
+          <span class="delta-tag rsi-up">柱狀體 -0.0006096</span>
         </div></div>
       </div>
       <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
@@ -1913,7 +1311,16 @@ h1 {
           <p>今天無候選。</p>
           <p class="empty-sub">訊號本身稀有且門檻嚴格，掛零是正常結果，不代表程式沒跑。</p>
         </div>
-    </section></div>
+    </section></div><div class="strategy-label">週線底背離<span class="strategy-hint">跟策略一同一套底背離邏輯，只是用週K代替日K，候選會非常稀少</span></div>
+    <section class="tier-section">
+      <div class="section-label">訊號新鮮<span class="section-hint">沒有分短期/長期兩層，只有這一層</span></div>
+      
+        <div class="empty">
+          <div class="empty-mark">—</div>
+          <p>今天無候選。</p>
+          <p class="empty-sub">訊號本身稀有且門檻嚴格，掛零是正常結果，不代表程式沒跑。</p>
+        </div>
+    </section>
 
   
     <section class="accuracy-section">
@@ -1956,7 +1363,7 @@ h1 {
     </section>
 
   <div class="footnote">
-八個買進候選策略互不重疊：底背離抓「幣價緩跌但賣壓遞減」的雙低點型態；超賣觀察抓「RSI 剛跌破20」的當下，不等反彈確認，所以可能還在探底、沒有止跌保證；趨勢線支撐抓「幣價貼著長期上升趨勢線」；MACD+RSI雙黃金交叉抓兩個指標在短期內都翻多；MACD柱狀體收腳抓「空頭動能連續遞減」的止跌訊號；MACD底背離抓「幣價創低但柱狀體沒創低」的動能背離；週線底背離跟策略一同一套邏輯改用週K，候選會非常稀少；MACD翻紅站上MA20抓「柱狀體剛由空轉多，且當天收盤價站上20日均線」的短期動能剛轉強訊號（20日均線是短期動能濾網，跟其餘策略用來判斷長期趨勢的200日均線不同層級、不互相取代）。
+八套策略底層邏輯各自獨立、互不重疊，但畫面上合併呈現成五個區塊：底背離抓「幣價緩跌但賣壓遞減」的雙低點型態；超賣觀察抓「RSI 剛跌破20」的當下，不等反彈確認，所以可能還在探底、沒有止跌保證；趨勢線支撐抓「幣價貼著長期上升趨勢線」；<b>MACD家族</b>（2026-08-25起合併顯示，因為底層都是MACD衍生指標，同一幣常同時觸發好幾套，分開列容易看起來像候選重複）包含四套獨立校準的策略——MACD+RSI雙黃金交叉抓兩個指標在短期內都翻多、MACD柱狀體收腳抓「空頭動能連續遞減」的止跌訊號、MACD底背離抓「幣價創低但柱狀體沒創低」的動能背離、MACD翻紅站上MA20抓「柱狀體剛由空轉多且站上20日均線」的短期動能轉強訊號（20日均線是短期濾網，跟其餘策略判斷長期趨勢用的200日均線不同層級）；同一幣同時命中兩套以上時卡片會合併、標籤標出命中了哪幾套（不是四個獨立機會，是同一個MACD轉多現象被多角度確認）；週線底背離跟底背離同一套邏輯改用週K，候選會非常稀少，維持獨立顯示。
     每張卡片如果出現警示標籤，代表這個交易對同時有轉弱跡象——不影響是否入選買進候選，純粹是提醒你兩邊訊號要一起看。橘色「日線警示」是近期日線出現RSI頂背離、MACD頂背離或MACD多頭收腳；紫色「週線警示」是週線本身也出現RSI頂背離或MACD多頭收腳(動能衰竭)。
     「多方共振」/「空方共振」/「指標打架」是另一組獨立判斷：綜合KD高低檔鈍化、RSI50軸方向、MACD零軸方向、量價是否同步四個指標，至少兩個同方向且沒有指標唱反調才算共振。這是用來判斷「現在誰在控盤」的動能讀法，跟前面的買進候選策略是分開的兩件事。
     多頭趨勢濾網（收盤價站上200日均線、且均線本身也在上升）只套用在「超賣觀察」「週線底背離」這兩套策略——校準時發現其餘六套策略（含2026-08-25新增的MACD翻紅站上MA20）在「非多頭」時命中率反而較高、跟台股版方向相反，2026-08-24使用者決定濾網只保留在驗證過確實同向有效的策略上，其餘六套不再要求多頭趨勢。詳見 spec/03-策略規格.md 第四章。
