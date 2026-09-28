@@ -649,6 +649,47 @@ h1 {
 .tag.chip-bull { background: var(--rise-soft); color: var(--rise); }
 .tag.chip-bear { background: var(--fall-soft); color: var(--fall); }
 .tag.chip-mixed { background: var(--warn-soft); color: var(--warn); }
+/* v2(2026-09-27)：主策略出場計畫、參考區 */
+.exit-plan {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 6px 14px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  font-size: 13px;
+}
+.exit-item { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.exit-item b { font-family: "Plex Mono", monospace; font-weight: 600; }
+.exit-item b.rise { color: var(--rise); }
+.exit-item b.fall { color: var(--fall); }
+.exit-item small { color: var(--text-muted); }
+.exit-label { font-size: 12px; color: var(--text-muted); }
+.bt-note {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: -4px 0 16px;
+}
+.bt-note b { color: var(--text); font-family: "Plex Mono", monospace; }
+.ref-block {
+  margin-top: 32px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  background: var(--surface);
+}
+.ref-block > summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.ref-note {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.acc-row-primary .acc-name { font-weight: 600; color: var(--accent); }
 </style>
 
 <div class="wrap">
@@ -662,8 +703,8 @@ h1 {
               onclick="cryptoDashboardToggleTheme()" title="切換淺色/深色模式"
               aria-label="切換淺色/深色模式">🌙</button>
       <div class="masthead-date">
-        2026-09-27（台灣時間）
-        <span class="updated">更新於 2026-09-27 10:14 台灣時間</span>
+        2026-09-28（台灣時間）
+        <span class="updated">更新於 2026-09-28 10:14 台灣時間</span>
       </div>
     </div>
   </header>
@@ -686,8 +727,8 @@ h1 {
         <span class="tag verdict-bull">多方共振</span>
       </div>
       <div class="mkt-mid">
-        <span class="mkt-price mono">84,486.35</span>
-        <span class="mkt-change mono rise">+0.06%</span>
+        <span class="mkt-price mono">84,472</span>
+        <span class="mkt-change mono rise">+0.05%</span>
         <span class="mkt-rsi mono">RSI 71</span>
       </div>
       <div class="row-aux"><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 量縮</span><span class="aux-item">量縮價跌(賣壓減輕)</span></div>
@@ -699,9 +740,9 @@ h1 {
         <span class="tag verdict-bull">多方共振</span>
       </div>
       <div class="mkt-mid">
-        <span class="mkt-price mono">2,700.81</span>
-        <span class="mkt-change mono rise">+0.17%</span>
-        <span class="mkt-rsi mono">RSI 67</span>
+        <span class="mkt-price mono">2,688.65</span>
+        <span class="mkt-change mono fall">-0.28%</span>
+        <span class="mkt-rsi mono">RSI 66</span>
       </div>
       <div class="row-aux"><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 量縮</span><span class="aux-item">量縮價跌(賣壓減輕)</span></div>
     </div>
@@ -714,12 +755,12 @@ h1 {
       <div class="stat-value mono">453</div>
     </div>
     <div class="stat">
-      <div class="stat-label">符合條件（底背離5／超賣0／支撐6／MACD家族10／週線背離2）</div>
-      <div class="stat-value mono accent">23</div>
+      <div class="stat-label">今天主要候選（超賣觀察(尚未反彈)；參考區另有 23 檔）</div>
+      <div class="stat-value mono accent">2</div>
     </div>
     <div class="stat">
-      <div class="stat-label">平均歷史命中率</div>
-      <div class="stat-value mono">79%</div>
+      <div class="stat-label">回測每筆平均報酬（後段 2025-08~2026-08，已扣成本）</div>
+      <div class="stat-value mono">+0.74%</div>
     </div>
     <div class="stat">
       <div class="stat-label">掃描失敗檔數</div>
@@ -727,7 +768,79 @@ h1 {
     </div>
   </div>
 
-  <div class="strategy-label">底背離<span class="strategy-hint">幣價創低、RSI 沒跟著創低（需要兩個低點比較，抓不到單邊急殺）</span></div>
+  <div class="strategy-label">超賣觀察(尚未反彈)<span class="strategy-hint">RSI 首次跌破25的幣，看到當天就照參考價附近買、照下面的出場計畫賣——賺的是跌過頭後的小反彈，不是抓起漲點；一筆賺不多，要靠多筆平均</span></div><div class="bt-note">回測（扣手續費+滑價0.3%，每筆持有最多10天）：前段 2024-01~2025-07 每筆平均 <b>+1.21%</b>、勝率 63%（2974筆）；後段 2025-08~2026-08 每筆平均 <b>+0.74%</b>、勝率 60%（3292筆）。回測資料不含已下市的幣，實際表現可能偏低；大跌段會連續虧損。</div>
+    <section class="tier-section">
+      <div class="section-label">今天可以考慮的候選<span class="section-hint">只列訊號後1天內的幣，最多10檔、依成交額排序；晚2天以上進場回測就不賺錢</span></div>
+      
+        <ul class="list">
+          
+    <li class="row">
+      <div class="row-head">
+        <span class="rank">01</span>
+        <span class="symbol">LSKUSDT</span>
+        <span class="fresh-tag">最新一根日K（2026-09-27）</span>
+      </div>
+      <div class="row-mid">
+        <div class="latest">
+          <span class="latest-price">0.3136</span>
+          <span class="latest-rsi">RSI 24</span>
+        </div>
+        <span class="latest-rsi">成交額 4.3M USDT</span>
+      </div>
+      
+      <div class="exit-plan">
+        <div class="exit-item"><span class="exit-label">參考進場價</span><b>0.3136</b></div>
+        <div class="exit-item"><span class="exit-label">停利</span><b class="rise">0.34496</b><small>（+10%）</small></div>
+        <div class="exit-item"><span class="exit-label">停損</span>不設停損</div>
+        <div class="exit-item"><span class="exit-label">最晚出場</span><b>10/08 08:00 前</b><small>（台灣時間）</small></div>
+      </div>
+      <div class="row-bottom">
+        <div class="lows">
+        <div class="low-pair">
+          <span class="low-date">09-27</span>
+          <span class="low-price down">0.3136</span>
+          <span class="delta-tag price-down">跌破超賣 RSI 24</span>
+        </div></div>
+      </div>
+    </li>
+
+    <li class="row">
+      <div class="row-head">
+        <span class="rank">02</span>
+        <span class="symbol">SOXSBUSDT</span>
+        <span class="fresh-tag">最新一根日K（2026-09-27）</span>
+      </div>
+      <div class="row-mid">
+        <div class="latest">
+          <span class="latest-price">32.65</span>
+          <span class="latest-rsi">RSI 25</span>
+        </div>
+        <span class="latest-rsi">成交額 441K USDT</span>
+      </div>
+      
+      <div class="exit-plan">
+        <div class="exit-item"><span class="exit-label">參考進場價</span><b>32.65</b></div>
+        <div class="exit-item"><span class="exit-label">停利</span><b class="rise">35.915</b><small>（+10%）</small></div>
+        <div class="exit-item"><span class="exit-label">停損</span>不設停損</div>
+        <div class="exit-item"><span class="exit-label">最晚出場</span><b>10/08 08:00 前</b><small>（台灣時間）</small></div>
+      </div>
+      <div class="row-bottom">
+        <div class="lows">
+        <div class="low-pair">
+          <span class="low-date">09-27</span>
+          <span class="low-price down">32.65</span>
+          <span class="delta-tag price-down">跌破超賣 RSI 25</span>
+        </div></div>
+      </div>
+    </li>
+        </ul>
+    </section>
+  <details class="ref-block">
+    <summary>參考區：未通過獲利驗證的策略（今天 23 檔，點開查看）</summary>
+    <p class="ref-note">2026-09-27 用「照停利停損買賣、扣成本後每筆平均報酬」重新驗證：以下策略在2025-08以後的測試期都是賠錢的
+    （趨勢線支撐原本的好成績是回測偷看未來造成的）。畫面上的「命中率」是舊標準（訊號後7～14天內曾碰到+3%），
+    不代表能賺錢，只供參考，不建議照著買。</p>
+    <div class="strategy-label">底背離<span class="strategy-hint">幣價創低、RSI 沒跟著創低（需要兩個低點比較，抓不到單邊急殺）</span></div>
     <section class="tier-section">
       <div class="section-label">訊號新鮮<span class="section-hint">沒有分短期/長期兩層，只有這一層</span></div>
       
@@ -750,8 +863,8 @@ h1 {
           <span class="winrate-label">70%<small>／10次</small></span>
         </div>
         <div class="latest">
-          <span class="latest-price">0.02282</span>
-          <span class="latest-rsi">RSI 66</span>
+          <span class="latest-price">0.02256</span>
+          <span class="latest-rsi">RSI 65</span>
         </div>
       </div>
       <div class="row-bottom">
@@ -766,7 +879,7 @@ h1 {
           <span class="delta-tag rsi-up">RSI +10.0</span>
         </div></div>
       </div>
-      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 持平</span></div>
+      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
     </li>
 
     <li class="row">
@@ -786,8 +899,8 @@ h1 {
           <span class="winrate-label">71%<small>／7次</small></span>
         </div>
         <div class="latest">
-          <span class="latest-price">0.02172</span>
-          <span class="latest-rsi">RSI 63</span>
+          <span class="latest-price">0.02193</span>
+          <span class="latest-rsi">RSI 64</span>
         </div>
       </div>
       <div class="row-bottom">
@@ -822,8 +935,8 @@ h1 {
           <span class="winrate-label">64%<small>／11次</small></span>
         </div>
         <div class="latest">
-          <span class="latest-price">0.0612</span>
-          <span class="latest-rsi">RSI 79</span>
+          <span class="latest-price">0.0629</span>
+          <span class="latest-rsi">RSI 81</span>
         </div>
       </div>
       <div class="row-bottom">
@@ -848,7 +961,7 @@ h1 {
         <span class="fresh-tag">7天前（2026-09-20）</span>
       </div>
       <div class="row-tags">
-        
+        <span class="tag verdict-bull">多方共振</span>
         
       </div>
       
@@ -858,8 +971,8 @@ h1 {
           <span class="winrate-label">67%<small>／6次</small></span>
         </div>
         <div class="latest">
-          <span class="latest-price">117.65</span>
-          <span class="latest-rsi">RSI 57</span>
+          <span class="latest-price">119.95</span>
+          <span class="latest-rsi">RSI 62</span>
         </div>
       </div>
       <div class="row-bottom">
@@ -874,7 +987,7 @@ h1 {
           <span class="delta-tag rsi-up">RSI +8.9</span>
         </div></div>
       </div>
-      <div class="row-aux"><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 持平</span></div>
+      <div class="row-aux"><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
     </li>
 
     <li class="row">
@@ -894,8 +1007,8 @@ h1 {
           <span class="winrate-label">67%<small>／6次</small></span>
         </div>
         <div class="latest">
-          <span class="latest-price">0.356</span>
-          <span class="latest-rsi">RSI 63</span>
+          <span class="latest-price">0.3607</span>
+          <span class="latest-rsi">RSI 64</span>
         </div>
       </div>
       <div class="row-bottom">
@@ -913,15 +1026,6 @@ h1 {
       <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸下方(中線偏空)</span><span class="aux-item">量能 持平</span></div>
     </li>
         </ul>
-    </section><div class="strategy-label">超賣觀察(尚未反彈)<span class="strategy-hint">RSI 首次跌破20當天就觸發，抓還沒漲上去的——代價是不保證止跌，可能繼續探底</span></div>
-    <section class="tier-section">
-      <div class="section-label">訊號新鮮<span class="section-hint">沒有分短期/長期兩層，只有這一層</span></div>
-      
-        <div class="empty">
-          <div class="empty-mark">—</div>
-          <p>今天無候選。</p>
-          <p class="empty-sub">訊號本身稀有且門檻嚴格，掛零是正常結果，不代表程式沒跑。</p>
-        </div>
     </section><div class="strategy-label">趨勢線支撐測試<span class="strategy-hint">幣價貼近長期上升趨勢線但沒跌破，用歷史低點找一組沒被跌破過、跨度最長的兩點連線當支撐</span></div>
     <section class="tier-section">
       <div class="section-label">訊號新鮮<span class="section-hint">沒有分短期/長期兩層，只有這一層</span></div>
@@ -945,7 +1049,7 @@ h1 {
           <span class="winrate-label">100%<small>／7次</small></span>
         </div>
         <div class="latest">
-          <span class="latest-price">187.23</span>
+          <span class="latest-price">187.5</span>
           <span class="latest-rsi">RSI 56</span>
         </div>
       </div>
@@ -979,8 +1083,8 @@ h1 {
           <span class="winrate-label">100%<small>／6次</small></span>
         </div>
         <div class="latest">
-          <span class="latest-price">191.56</span>
-          <span class="latest-rsi">RSI 64</span>
+          <span class="latest-price">190.14</span>
+          <span class="latest-rsi">RSI 62</span>
         </div>
       </div>
       <div class="row-bottom">
@@ -993,14 +1097,14 @@ h1 {
           <span class="delta-tag rsi-up">高出支撐 3.3%</span>
         </div></div>
       </div>
-      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 量縮</span><span class="aux-item">量縮價跌(賣壓減輕)</span></div>
+      <div class="row-aux"><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 量縮</span><span class="aux-item">量縮價跌(賣壓減輕)</span></div>
     </li>
 
     <li class="row">
       <div class="row-head">
         <span class="rank">03</span>
         <span class="symbol">ALGOUSDT</span>
-        <span class="fresh-tag">0天前（2026-09-27）</span>
+        <span class="fresh-tag">3天前（2026-09-24）</span>
       </div>
       <div class="row-tags">
         <span class="tag verdict-mixed">指標打架(觀望)</span>
@@ -1013,18 +1117,18 @@ h1 {
           <span class="winrate-label">78%<small>／9次</small></span>
         </div>
         <div class="latest">
-          <span class="latest-price">0.1174</span>
-          <span class="latest-rsi">RSI 71</span>
+          <span class="latest-price">0.1195</span>
+          <span class="latest-rsi">RSI 72</span>
         </div>
       </div>
       <div class="row-bottom">
         <div class="lows">
         <div class="low-pair">
-          <span class="low-date">09-27</span>
-          <span class="low-price">0.1174</span>
+          <span class="low-date">09-24</span>
+          <span class="low-price">0.1132</span>
           <span class="arrow">支撐位</span>
-          <span class="low-price down">0.11087</span>
-          <span class="delta-tag rsi-up">高出支撐 5.9%</span>
+          <span class="low-price down">0.110866</span>
+          <span class="delta-tag rsi-up">高出支撐 2.1%</span>
         </div></div>
       </div>
       <div class="row-aux"><span class="aux-item">KD 高檔鈍化</span><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 量縮</span><span class="aux-item">量縮價漲(空方背離)</span></div>
@@ -1047,7 +1151,7 @@ h1 {
           <span class="winrate-label">100%<small>／3次</small></span>
         </div>
         <div class="latest">
-          <span class="latest-price">0.4953</span>
+          <span class="latest-price">0.4935</span>
           <span class="latest-rsi">RSI 57</span>
         </div>
       </div>
@@ -1081,8 +1185,8 @@ h1 {
           <span class="winrate-label">73%<small>／11次</small></span>
         </div>
         <div class="latest">
-          <span class="latest-price">0.0444</span>
-          <span class="latest-rsi">RSI 64</span>
+          <span class="latest-price">0.0445</span>
+          <span class="latest-rsi">RSI 65</span>
         </div>
       </div>
       <div class="row-bottom">
@@ -1095,7 +1199,7 @@ h1 {
           <span class="delta-tag rsi-up">高出支撐 3.0%</span>
         </div></div>
       </div>
-      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
+      <div class="row-aux"><span class="aux-item">KD 高檔鈍化</span><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
     </li>
 
     <li class="row">
@@ -1115,7 +1219,7 @@ h1 {
           <span class="winrate-label">80%<small>／5次</small></span>
         </div>
         <div class="latest">
-          <span class="latest-price">224.46</span>
+          <span class="latest-price">224.68</span>
           <span class="latest-rsi">RSI 69</span>
         </div>
       </div>
@@ -1145,8 +1249,8 @@ h1 {
         <span class="fresh-tag">2天前（2026-09-25）</span>
       </div>
       <div class="row-tags">
-        <span class="tag verdict-mixed">指標打架(觀望)</span>
-        <span class="tag warning-tag">日線警示 RSI頂背離(2026-09-23)、MACD頂背離(2026-09-23)</span>
+        <span class="tag verdict-bull">多方共振</span>
+        
       </div>
       <div class="row-family-tags"><span class="tag family-tag">MACD+RSI雙黃金交叉 87%</span></div>
       <div class="row-mid">
@@ -1155,8 +1259,8 @@ h1 {
           <span class="winrate-label">87%<small>／23次</small></span>
         </div>
         <div class="latest">
-          <span class="latest-price">0.003197</span>
-          <span class="latest-rsi">RSI 65</span>
+          <span class="latest-price">0.003476</span>
+          <span class="latest-rsi">RSI 70</span>
         </div>
       </div>
       <div class="row-bottom">
@@ -1168,12 +1272,45 @@ h1 {
           <span class="delta-tag rsi-up">收盤 0.003123</span>
         </div></div>
       </div>
-      <div class="row-aux"><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 量縮</span><span class="aux-item">量縮價漲(空方背離)</span></div>
+      <div class="row-aux"><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
     </li>
 
     <li class="row">
       <div class="row-head">
         <span class="rank">02</span>
+        <span class="symbol">YBUSDT</span>
+        <span class="fresh-tag">4天前（2026-09-23）</span>
+      </div>
+      <div class="row-tags">
+        <span class="tag verdict-mixed">指標打架(觀望)</span>
+        <span class="tag warning-tag">日線警示 RSI頂背離(2026-09-13)、MACD頂背離(2026-09-13)</span>
+      </div>
+      <div class="row-family-tags"><span class="tag family-tag">MACD+RSI雙黃金交叉 100%</span></div>
+      <div class="row-mid">
+        <div class="winrate">
+          <div class="winrate-track"><div class="winrate-fill" style="width:100%"></div></div>
+          <span class="winrate-label">100%<small>／8次</small></span>
+        </div>
+        <div class="latest">
+          <span class="latest-price">0.0899</span>
+          <span class="latest-rsi">RSI 62</span>
+        </div>
+      </div>
+      <div class="row-bottom">
+        <div class="lows">
+        <div class="low-pair">
+          <span class="low-date">MACD交叉 09-22</span>
+          <span class="arrow">+</span>
+          <span class="low-date">RSI交叉 09-23</span>
+          <span class="delta-tag rsi-up">收盤 0.0875</span>
+        </div></div>
+      </div>
+      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價跌(空方賣壓)</span></div>
+    </li>
+
+    <li class="row">
+      <div class="row-head">
+        <span class="rank">03</span>
         <span class="symbol">JSTUSDT</span>
         <span class="fresh-tag">2天前（2026-09-25）</span>
       </div>
@@ -1181,15 +1318,15 @@ h1 {
         <span class="tag verdict-mixed">指標打架(觀望)</span>
         
       </div>
-      <div class="row-family-tags"><span class="tag family-tag">MACD翻紅站上MA20 77%</span></div>
+      <div class="row-family-tags"><span class="tag family-tag">MACD翻紅站上MA20 78%</span></div>
       <div class="row-mid">
         <div class="winrate">
-          <div class="winrate-track"><div class="winrate-fill" style="width:77%"></div></div>
-          <span class="winrate-label">77%<small>／31次</small></span>
+          <div class="winrate-track"><div class="winrate-fill" style="width:78%"></div></div>
+          <span class="winrate-label">78%<small>／32次</small></span>
         </div>
         <div class="latest">
-          <span class="latest-price">0.12412</span>
-          <span class="latest-rsi">RSI 68</span>
+          <span class="latest-price">0.12644</span>
+          <span class="latest-rsi">RSI 70</span>
         </div>
       </div>
       <div class="row-bottom">
@@ -1207,7 +1344,7 @@ h1 {
 
     <li class="row">
       <div class="row-head">
-        <span class="rank">03</span>
+        <span class="rank">04</span>
         <span class="symbol">ICPUSDT</span>
         <span class="fresh-tag">7天前（2026-09-20）</span>
       </div>
@@ -1222,8 +1359,8 @@ h1 {
           <span class="winrate-label">79%<small>／24次</small></span>
         </div>
         <div class="latest">
-          <span class="latest-price">3.218</span>
-          <span class="latest-rsi">RSI 68</span>
+          <span class="latest-price">3.148</span>
+          <span class="latest-rsi">RSI 65</span>
         </div>
       </div>
       <div class="row-bottom">
@@ -1235,12 +1372,44 @@ h1 {
           <span class="delta-tag rsi-up">收盤 2.897</span>
         </div></div>
       </div>
-      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 持平</span></div>
+      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
     </li>
 
     <li class="row">
       <div class="row-head">
-        <span class="rank">04</span>
+        <span class="rank">05</span>
+        <span class="symbol">CRVUSDT</span>
+        <span class="fresh-tag">1天前（2026-09-26）</span>
+      </div>
+      <div class="row-tags">
+        <span class="tag verdict-bull">多方共振</span>
+        <span class="tag warning-tag-weekly">週線警示 週MACD多頭收腳(2026-09-27)</span>
+      </div>
+      <div class="row-family-tags"><span class="tag family-tag">MACD柱狀體收腳(止跌) 75%</span></div>
+      <div class="row-mid">
+        <div class="winrate">
+          <div class="winrate-track"><div class="winrate-fill" style="width:75%"></div></div>
+          <span class="winrate-label">75%<small>／32次</small></span>
+        </div>
+        <div class="latest">
+          <span class="latest-price">0.3535</span>
+          <span class="latest-rsi">RSI 52</span>
+        </div>
+      </div>
+      <div class="row-bottom">
+        <div class="lows">
+        <div class="low-pair">
+          <span class="low-date">收腳確認 09-26</span>
+          <span class="low-price down">0.3478</span>
+          <span class="delta-tag rsi-up">柱狀體 -0.00194253</span>
+        </div></div>
+      </div>
+      <div class="row-aux"><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 量縮</span><span class="aux-item">量縮價跌(賣壓減輕)</span></div>
+    </li>
+
+    <li class="row">
+      <div class="row-head">
+        <span class="rank">06</span>
         <span class="symbol">REZUSDT</span>
         <span class="fresh-tag">2天前（2026-09-25）</span>
       </div>
@@ -1255,8 +1424,8 @@ h1 {
           <span class="winrate-label">77%<small>／22次</small></span>
         </div>
         <div class="latest">
-          <span class="latest-price">0.00437</span>
-          <span class="latest-rsi">RSI 50</span>
+          <span class="latest-price">0.00436</span>
+          <span class="latest-rsi">RSI 49</span>
         </div>
       </div>
       <div class="row-bottom">
@@ -1273,7 +1442,7 @@ h1 {
 
     <li class="row">
       <div class="row-head">
-        <span class="rank">05</span>
+        <span class="rank">07</span>
         <span class="symbol">TURBOUSDT</span>
         <span class="fresh-tag">7天前（2026-09-20）</span>
       </div>
@@ -1288,8 +1457,8 @@ h1 {
           <span class="winrate-label">79%<small>／14次</small></span>
         </div>
         <div class="latest">
-          <span class="latest-price">0.001053</span>
-          <span class="latest-rsi">RSI 66</span>
+          <span class="latest-price">0.001067</span>
+          <span class="latest-rsi">RSI 67</span>
         </div>
       </div>
       <div class="row-bottom">
@@ -1301,45 +1470,12 @@ h1 {
           <span class="delta-tag rsi-up">收盤 0.000972</span>
         </div></div>
       </div>
-      <div class="row-aux"><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 量縮</span><span class="aux-item">量縮價跌(賣壓減輕)</span></div>
+      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 量縮</span><span class="aux-item">量縮價跌(賣壓減輕)</span></div>
     </li>
 
     <li class="row">
       <div class="row-head">
-        <span class="rank">06</span>
-        <span class="symbol">GNOUSDT</span>
-        <span class="fresh-tag">0天前（2026-09-27）</span>
-      </div>
-      <div class="row-tags">
-        
-        
-      </div>
-      <div class="row-family-tags"><span class="tag family-tag">MACD+RSI雙黃金交叉 73%</span></div>
-      <div class="row-mid">
-        <div class="winrate">
-          <div class="winrate-track"><div class="winrate-fill" style="width:73%"></div></div>
-          <span class="winrate-label">73%<small>／22次</small></span>
-        </div>
-        <div class="latest">
-          <span class="latest-price">117.65</span>
-          <span class="latest-rsi">RSI 57</span>
-        </div>
-      </div>
-      <div class="row-bottom">
-        <div class="lows">
-        <div class="low-pair">
-          <span class="low-date">MACD交叉 09-27</span>
-          <span class="arrow">+</span>
-          <span class="low-date">RSI交叉 09-27</span>
-          <span class="delta-tag rsi-up">收盤 117.65</span>
-        </div></div>
-      </div>
-      <div class="row-aux"><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 持平</span></div>
-    </li>
-
-    <li class="row">
-      <div class="row-head">
-        <span class="rank">07</span>
+        <span class="rank">08</span>
         <span class="symbol">STGUSDT</span>
         <span class="fresh-tag">3天前（2026-09-24）</span>
       </div>
@@ -1354,8 +1490,8 @@ h1 {
           <span class="winrate-label">69%<small>／32次</small></span>
         </div>
         <div class="latest">
-          <span class="latest-price">0.1376</span>
-          <span class="latest-rsi">RSI 40</span>
+          <span class="latest-price">0.142</span>
+          <span class="latest-rsi">RSI 43</span>
         </div>
       </div>
       <div class="row-bottom">
@@ -1371,7 +1507,7 @@ h1 {
 
     <li class="row">
       <div class="row-head">
-        <span class="rank">08</span>
+        <span class="rank">09</span>
         <span class="symbol">QTUMUSDT</span>
         <span class="fresh-tag">7天前（2026-09-20）</span>
       </div>
@@ -1386,7 +1522,7 @@ h1 {
           <span class="winrate-label">74%<small>／19次</small></span>
         </div>
         <div class="latest">
-          <span class="latest-price">1.025</span>
+          <span class="latest-price">1.026</span>
           <span class="latest-rsi">RSI 57</span>
         </div>
       </div>
@@ -1405,7 +1541,7 @@ h1 {
 
     <li class="row">
       <div class="row-head">
-        <span class="rank">09</span>
+        <span class="rank">10</span>
         <span class="symbol">VIRTUALUSDT</span>
         <span class="fresh-tag">7天前（2026-09-20）</span>
       </div>
@@ -1420,8 +1556,8 @@ h1 {
           <span class="winrate-label">100%<small>／4次</small></span>
         </div>
         <div class="latest">
-          <span class="latest-price">0.7914</span>
-          <span class="latest-rsi">RSI 75</span>
+          <span class="latest-price">0.841</span>
+          <span class="latest-rsi">RSI 78</span>
         </div>
       </div>
       <div class="row-bottom">
@@ -1434,39 +1570,7 @@ h1 {
           <span class="delta-tag rsi-up">柱狀體 0.00067623</span>
         </div></div>
       </div>
-      <div class="row-aux"><span class="aux-item">KD 高檔鈍化</span><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 持平</span></div>
-    </li>
-
-    <li class="row">
-      <div class="row-head">
-        <span class="rank">10</span>
-        <span class="symbol">PROMUSDT</span>
-        <span class="fresh-tag">2天前（2026-09-25）</span>
-      </div>
-      <div class="row-tags">
-        <span class="tag verdict-bull">多方共振</span>
-        
-      </div>
-      <div class="row-family-tags"><span class="tag family-tag">MACD柱狀體收腳(止跌) 68%</span></div>
-      <div class="row-mid">
-        <div class="winrate">
-          <div class="winrate-track"><div class="winrate-fill" style="width:68%"></div></div>
-          <span class="winrate-label">68%<small>／34次</small></span>
-        </div>
-        <div class="latest">
-          <span class="latest-price">6.171</span>
-          <span class="latest-rsi">RSI 58</span>
-        </div>
-      </div>
-      <div class="row-bottom">
-        <div class="lows">
-        <div class="low-pair">
-          <span class="low-date">收腳確認 09-25</span>
-          <span class="low-price down">5.998</span>
-          <span class="delta-tag rsi-up">柱狀體 -0.062893</span>
-        </div></div>
-      </div>
-      <div class="row-aux"><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 持平</span></div>
+      <div class="row-aux"><span class="aux-item">KD 高檔鈍化</span><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
     </li>
         </ul>
     </section><div class="strategy-label">週線底背離<span class="strategy-hint">跟策略一同一套底背離邏輯，只是用週K代替日K，候選會非常稀少</span></div>
@@ -1492,8 +1596,8 @@ h1 {
           <span class="winrate-label">100%<small>／3次</small></span>
         </div>
         <div class="latest">
-          <span class="latest-price">0.003089</span>
-          <span class="latest-rsi">RSI 69</span>
+          <span class="latest-price">0.003019</span>
+          <span class="latest-rsi">RSI 68</span>
         </div>
       </div>
       <div class="row-bottom">
@@ -1508,7 +1612,7 @@ h1 {
           <span class="delta-tag rsi-up">RSI +4.3</span>
         </div></div>
       </div>
-      <div class="row-aux"><span class="aux-item">RSI軸 空方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 量縮</span><span class="aux-item">量縮價漲(空方背離)</span></div>
+      <div class="row-aux"><span class="aux-item">RSI軸 空方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 量縮</span><span class="aux-item">量縮價跌(賣壓減輕)</span></div>
     </li>
 
     <li class="row">
@@ -1528,8 +1632,8 @@ h1 {
           <span class="winrate-label">75%<small>／4次</small></span>
         </div>
         <div class="latest">
-          <span class="latest-price">0.366</span>
-          <span class="latest-rsi">RSI 57</span>
+          <span class="latest-price">0.37</span>
+          <span class="latest-rsi">RSI 58</span>
         </div>
       </div>
       <div class="row-bottom">
@@ -1544,14 +1648,15 @@ h1 {
           <span class="delta-tag rsi-up">RSI +15.6</span>
         </div></div>
       </div>
-      <div class="row-aux"><span class="aux-item">KD 高檔鈍化</span><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 持平</span></div>
+      <div class="row-aux"><span class="aux-item">KD 高檔鈍化</span><span class="aux-item">RSI軸 多方優勢</span><span class="aux-item">MACD 零軸上方(中線偏多)</span><span class="aux-item">量能 放量</span><span class="aux-item">量增價漲(多方健康)</span></div>
     </li>
         </ul>
     </section>
+  </details>
 
   
     <section class="accuracy-section">
-      <div class="section-label">訊號歷史準確度追蹤<span class="section-hint">實際命中率 vs 校準時回測命中率，長期累積用來判斷校準數字是否隨市況漂移</span></div>
+      <div class="section-label">訊號歷史準確度追蹤<span class="section-hint">第一行起是停利停損實績（每筆平均報酬，判斷能不能賺錢看這個）；其餘是舊標準「碰到+3%」命中率，只供延續觀察</span></div>
       <div class="acc-grid">
         
         <div class="acc-row">
@@ -1566,18 +1671,18 @@ h1 {
         </div>
         <div class="acc-row">
           <span class="acc-name">趨勢線支撐測試</span>
-          <span class="acc-actual mono">實際 65%<small>／34筆</small></span>
-          <span class="acc-calib mono">校準 67%</span><span class="acc-diff acc-diff-down">-2.2pp</span>
+          <span class="acc-actual mono">實際 67%<small>／36筆</small></span>
+          <span class="acc-calib mono">校準 67%</span><span class="acc-diff acc-diff-down">-0.2pp</span>
         </div>
         <div class="acc-row">
           <span class="acc-name">MACD+RSI雙黃金交叉</span>
-          <span class="acc-actual mono">實際 73%<small>／60筆</small></span>
-          <span class="acc-calib mono">校準 64%</span><span class="acc-diff acc-diff-up">+8.9pp</span>
+          <span class="acc-actual mono">實際 75%<small>／64筆</small></span>
+          <span class="acc-calib mono">校準 64%</span><span class="acc-diff acc-diff-up">+10.6pp</span>
         </div>
         <div class="acc-row">
           <span class="acc-name">MACD柱狀體收腳(止跌)</span>
-          <span class="acc-actual mono">實際 75%<small>／92筆</small></span>
-          <span class="acc-calib mono">校準 62%</span><span class="acc-diff acc-diff-up">+13.5pp</span>
+          <span class="acc-actual mono">實際 76%<small>／96筆</small></span>
+          <span class="acc-calib mono">校準 62%</span><span class="acc-diff acc-diff-up">+14.5pp</span>
         </div>
         <div class="acc-row">
           <span class="acc-name">MACD底背離</span>
@@ -1586,13 +1691,13 @@ h1 {
         </div>
         <div class="acc-row">
           <span class="acc-name">週線底背離</span>
-          <span class="acc-actual mono">實際 100%<small>／6筆</small></span>
+          <span class="acc-actual mono">實際 100%<small>／7筆</small></span>
           <span class="acc-nobench">無校準基準可比較</span>
         </div>
         <div class="acc-row">
           <span class="acc-name">MACD翻紅站上MA20</span>
-          <span class="acc-actual mono">實際 83%<small>／63筆</small></span>
-          <span class="acc-calib mono">校準 61%</span><span class="acc-diff acc-diff-up">+21.4pp</span>
+          <span class="acc-actual mono">實際 82%<small>／68筆</small></span>
+          <span class="acc-calib mono">校準 61%</span><span class="acc-diff acc-diff-up">+21.3pp</span>
         </div>
       </div>
     </section>
@@ -1608,7 +1713,7 @@ h1 {
   
     <div class="stats">
       <div class="stat">
-        <div class="stat-label">合約交易對（USDT本位永續，資料日 2026-09-27（UTC））</div>
+        <div class="stat-label">合約交易對（USDT本位永續，資料日 2026-09-28（UTC））</div>
         <div class="stat-value mono">524</div>
       </div>
       <div class="stat">
@@ -1629,44 +1734,44 @@ h1 {
       <div class="fut-rank-title">資金費率最高10檔<span class="section-hint">正費率過高＝多方擁擠付錢給空方，可能有回落風險</span></div>
       
         <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">KOMAUSDT</span>
-          <span class="fut-rank-value mono rise">+0.148%</span>
+          <span class="fut-rank-symbol mono">LYNUSDT</span>
+          <span class="fut-rank-value mono rise">+0.111%</span>
         </div>
         <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">PLAYUSDT</span>
-          <span class="fut-rank-value mono rise">+0.109%</span>
+          <span class="fut-rank-symbol mono">FIGHTUSDT</span>
+          <span class="fut-rank-value mono rise">+0.085%</span>
         </div>
         <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">ESPORTSUSDT</span>
-          <span class="fut-rank-value mono rise">+0.106%</span>
+          <span class="fut-rank-symbol mono">AINUSDT</span>
+          <span class="fut-rank-value mono rise">+0.070%</span>
+        </div>
+        <div class="fut-rank-row">
+          <span class="fut-rank-symbol mono">1000RATSUSDT</span>
+          <span class="fut-rank-value mono rise">+0.054%</span>
         </div>
         <div class="fut-rank-row">
           <span class="fut-rank-symbol mono">IDOLUSDT</span>
-          <span class="fut-rank-value mono rise">+0.088%</span>
+          <span class="fut-rank-value mono rise">+0.051%</span>
         </div>
         <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">AIAUSDT</span>
-          <span class="fut-rank-value mono rise">+0.077%</span>
+          <span class="fut-rank-symbol mono">PLAYUSDT</span>
+          <span class="fut-rank-value mono rise">+0.050%</span>
         </div>
         <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">EVAAUSDT</span>
-          <span class="fut-rank-value mono rise">+0.071%</span>
+          <span class="fut-rank-symbol mono">GWEIUSDT</span>
+          <span class="fut-rank-value mono rise">+0.049%</span>
         </div>
         <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">TRADOORUSDT</span>
-          <span class="fut-rank-value mono rise">+0.066%</span>
+          <span class="fut-rank-symbol mono">MUSDT</span>
+          <span class="fut-rank-value mono rise">+0.047%</span>
         </div>
         <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">USUSDT</span>
-          <span class="fut-rank-value mono rise">+0.065%</span>
+          <span class="fut-rank-symbol mono">BTWUSDT</span>
+          <span class="fut-rank-value mono rise">+0.043%</span>
         </div>
         <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">PHAROSUSDT</span>
-          <span class="fut-rank-value mono rise">+0.064%</span>
-        </div>
-        <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">B2USDT</span>
-          <span class="fut-rank-value mono rise">+0.062%</span>
+          <span class="fut-rank-symbol mono">PTBUSDT</span>
+          <span class="fut-rank-value mono rise">+0.042%</span>
         </div>
     </div>
         
@@ -1674,44 +1779,44 @@ h1 {
       <div class="fut-rank-title">資金費率最低10檔<span class="section-hint">負費率過低＝空方擁擠付錢給多方，可能有軋空風險</span></div>
       
         <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">ESPUSDT</span>
-          <span class="fut-rank-value mono fall">-0.479%</span>
+          <span class="fut-rank-symbol mono">SAGAUSDT</span>
+          <span class="fut-rank-value mono fall">-0.865%</span>
         </div>
         <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">2ZUSDT</span>
-          <span class="fut-rank-value mono fall">-0.410%</span>
-        </div>
-        <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">COWUSDT</span>
-          <span class="fut-rank-value mono fall">-0.327%</span>
-        </div>
-        <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">TUSDT</span>
-          <span class="fut-rank-value mono fall">-0.305%</span>
-        </div>
-        <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">RAREUSDT</span>
-          <span class="fut-rank-value mono fall">-0.297%</span>
-        </div>
-        <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">STEEMUSDT</span>
-          <span class="fut-rank-value mono fall">-0.198%</span>
-        </div>
-        <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">WAXPUSDT</span>
-          <span class="fut-rank-value mono fall">-0.188%</span>
-        </div>
-        <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">QNTUSDT</span>
-          <span class="fut-rank-value mono fall">-0.109%</span>
-        </div>
-        <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">ALLUSDT</span>
-          <span class="fut-rank-value mono fall">-0.105%</span>
+          <span class="fut-rank-symbol mono">TRUSTUSDT</span>
+          <span class="fut-rank-value mono fall">-0.201%</span>
         </div>
         <div class="fut-rank-row">
           <span class="fut-rank-symbol mono">ONEUSDT</span>
-          <span class="fut-rank-value mono fall">-0.101%</span>
+          <span class="fut-rank-value mono fall">-0.136%</span>
+        </div>
+        <div class="fut-rank-row">
+          <span class="fut-rank-symbol mono">COTIUSDT</span>
+          <span class="fut-rank-value mono fall">-0.084%</span>
+        </div>
+        <div class="fut-rank-row">
+          <span class="fut-rank-symbol mono">TUSDT</span>
+          <span class="fut-rank-value mono fall">-0.075%</span>
+        </div>
+        <div class="fut-rank-row">
+          <span class="fut-rank-symbol mono">MAGICUSDT</span>
+          <span class="fut-rank-value mono fall">-0.060%</span>
+        </div>
+        <div class="fut-rank-row">
+          <span class="fut-rank-symbol mono">COWUSDT</span>
+          <span class="fut-rank-value mono fall">-0.059%</span>
+        </div>
+        <div class="fut-rank-row">
+          <span class="fut-rank-symbol mono">TRXUSDT</span>
+          <span class="fut-rank-value mono fall">-0.052%</span>
+        </div>
+        <div class="fut-rank-row">
+          <span class="fut-rank-symbol mono">GUSDT</span>
+          <span class="fut-rank-value mono fall">-0.051%</span>
+        </div>
+        <div class="fut-rank-row">
+          <span class="fut-rank-symbol mono">LSKUSDT</span>
+          <span class="fut-rank-value mono fall">-0.032%</span>
         </div>
     </div>
         
@@ -1719,44 +1824,44 @@ h1 {
       <div class="fut-rank-title">未平倉量24h增幅最大10檔<span class="section-hint">可能代表資金正在湧入、行情可能加劇</span></div>
       
         <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">2ZUSDT</span>
-          <span class="fut-rank-value mono rise">+103.14%</span>
+          <span class="fut-rank-symbol mono">WUSDT</span>
+          <span class="fut-rank-value mono rise">+81.81%</span>
         </div>
         <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">RAREUSDT</span>
-          <span class="fut-rank-value mono rise">+103.10%</span>
+          <span class="fut-rank-symbol mono">MAGICUSDT</span>
+          <span class="fut-rank-value mono rise">+57.03%</span>
         </div>
         <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">QUSDT</span>
-          <span class="fut-rank-value mono rise">+39.21%</span>
+          <span class="fut-rank-symbol mono">BIGTIMEUSDT</span>
+          <span class="fut-rank-value mono rise">+51.42%</span>
         </div>
         <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">QNTUSDT</span>
-          <span class="fut-rank-value mono rise">+33.21%</span>
+          <span class="fut-rank-symbol mono">GRTUSDT</span>
+          <span class="fut-rank-value mono rise">+42.16%</span>
         </div>
         <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">RUNEUSDT</span>
-          <span class="fut-rank-value mono rise">+28.48%</span>
+          <span class="fut-rank-symbol mono">XVGUSDT</span>
+          <span class="fut-rank-value mono rise">+40.61%</span>
         </div>
         <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">WAXPUSDT</span>
-          <span class="fut-rank-value mono rise">+26.64%</span>
+          <span class="fut-rank-symbol mono">INXUSDT</span>
+          <span class="fut-rank-value mono rise">+35.97%</span>
         </div>
         <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">C98USDT</span>
-          <span class="fut-rank-value mono rise">+23.48%</span>
+          <span class="fut-rank-symbol mono">SOONUSDT</span>
+          <span class="fut-rank-value mono rise">+35.07%</span>
         </div>
         <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">AWEUSDT</span>
-          <span class="fut-rank-value mono rise">+22.88%</span>
+          <span class="fut-rank-symbol mono">AZTECUSDT</span>
+          <span class="fut-rank-value mono rise">+33.20%</span>
         </div>
         <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">CLANKERUSDT</span>
-          <span class="fut-rank-value mono rise">+22.74%</span>
+          <span class="fut-rank-symbol mono">COWUSDT</span>
+          <span class="fut-rank-value mono rise">+25.95%</span>
         </div>
         <div class="fut-rank-row">
-          <span class="fut-rank-symbol mono">KMNOUSDT</span>
-          <span class="fut-rank-value mono rise">+19.72%</span>
+          <span class="fut-rank-symbol mono">TAIKOUSDT</span>
+          <span class="fut-rank-value mono rise">+23.64%</span>
         </div>
     </div>
       </div>
@@ -1775,8 +1880,8 @@ h1 {
           </div>
           <div class="fut-cross-mid mono">
             <span>資金費率 <b class="rise">+0.005%</b></span>
-            <span>未平倉24h <b class="fall">-1.88%</b></span>
-            <span>多空比 2.75</span>
+            <span>未平倉24h <b class="fall">-0.89%</b></span>
+            <span>多空比 2.79</span>
           </div>
         </div>
         <div class="fut-cross-row">
@@ -1787,8 +1892,8 @@ h1 {
           </div>
           <div class="fut-cross-mid mono">
             <span>資金費率 <b class="rise">+0.005%</b></span>
-            <span>未平倉24h <b class="rise">+7.50%</b></span>
-            <span>多空比 3.18</span>
+            <span>未平倉24h <b class="fall">-3.91%</b></span>
+            <span>多空比 3.02</span>
           </div>
         </div>
         <div class="fut-cross-row">
@@ -1799,8 +1904,8 @@ h1 {
           </div>
           <div class="fut-cross-mid mono">
             <span>資金費率 <b class="rise">+0.010%</b></span>
-            <span>未平倉24h <b class="rise">+1.93%</b></span>
-            <span>多空比 1.71</span>
+            <span>未平倉24h <b class="fall">-3.44%</b></span>
+            <span>多空比 1.56</span>
           </div>
         </div>
         <div class="fut-cross-row">
@@ -1811,8 +1916,8 @@ h1 {
           </div>
           <div class="fut-cross-mid mono">
             <span>資金費率 <b class="rise">+0.005%</b></span>
-            <span>未平倉24h <b class="rise">+1.36%</b></span>
-            <span>多空比 4.83</span>
+            <span>未平倉24h <b class="fall">-2.72%</b></span>
+            <span>多空比 5.08</span>
           </div>
         </div>
         <div class="fut-cross-row">
@@ -1822,9 +1927,9 @@ h1 {
             <span class="tag chip-mixed">籌碼分歧</span>
           </div>
           <div class="fut-cross-mid mono">
-            <span>資金費率 <b class="rise">+0.007%</b></span>
-            <span>未平倉24h <b class="fall">-0.07%</b></span>
-            <span>多空比 0.81</span>
+            <span>資金費率 <b class="rise">+0.005%</b></span>
+            <span>未平倉24h <b class="fall">-3.57%</b></span>
+            <span>多空比 0.80</span>
           </div>
         </div>
         <div class="fut-cross-row">
@@ -1835,8 +1940,20 @@ h1 {
           </div>
           <div class="fut-cross-mid mono">
             <span>資金費率 <b class="rise">+0.005%</b></span>
-            <span>未平倉24h <b class="fall">-0.41%</b></span>
-            <span>多空比 3.17</span>
+            <span>未平倉24h <b class="fall">-2.14%</b></span>
+            <span>多空比 3.42</span>
+          </div>
+        </div>
+        <div class="fut-cross-row">
+          <div class="fut-cross-head">
+            <span class="symbol mono">CRVUSDT</span>
+            <span class="tag">MACD柱狀體收腳(止跌)</span>
+            <span class="tag chip-mixed">籌碼分歧</span>
+          </div>
+          <div class="fut-cross-mid mono">
+            <span>資金費率 <b class="rise">+0.010%</b></span>
+            <span>未平倉24h <b class="rise">+1.01%</b></span>
+            <span>多空比 0.83</span>
           </div>
         </div>
         <div class="fut-cross-row">
@@ -1847,8 +1964,8 @@ h1 {
           </div>
           <div class="fut-cross-mid mono">
             <span>資金費率 <b class="rise">+0.005%</b></span>
-            <span>未平倉24h <b class="rise">+2.78%</b></span>
-            <span>多空比 1.88</span>
+            <span>未平倉24h <b class="rise">+16.95%</b></span>
+            <span>多空比 1.65</span>
           </div>
         </div>
         <div class="fut-cross-row">
@@ -1859,8 +1976,8 @@ h1 {
           </div>
           <div class="fut-cross-mid mono">
             <span>資金費率 <b class="rise">+0.005%</b></span>
-            <span>未平倉24h <b class="rise">+5.45%</b></span>
-            <span>多空比 1.98</span>
+            <span>未平倉24h <b class="rise">+2.40%</b></span>
+            <span>多空比 2.04</span>
           </div>
         </div>
         <div class="fut-cross-row">
@@ -1871,8 +1988,8 @@ h1 {
           </div>
           <div class="fut-cross-mid mono">
             <span>資金費率 <b class="rise">+0.005%</b></span>
-            <span>未平倉24h <b class="rise">+2.55%</b></span>
-            <span>多空比 2.72</span>
+            <span>未平倉24h <b class="fall">-1.65%</b></span>
+            <span>多空比 2.74</span>
           </div>
         </div>
         <div class="fut-cross-row">
@@ -1883,8 +2000,8 @@ h1 {
           </div>
           <div class="fut-cross-mid mono">
             <span>資金費率 <b class="rise">+0.005%</b></span>
-            <span>未平倉24h <b class="fall">-4.03%</b></span>
-            <span>多空比 1.00</span>
+            <span>未平倉24h <b class="rise">+6.39%</b></span>
+            <span>多空比 0.81</span>
           </div>
         </div>
         <div class="fut-cross-row">
@@ -1895,8 +2012,8 @@ h1 {
           </div>
           <div class="fut-cross-mid mono">
             <span>資金費率 <b class="rise">+0.005%</b></span>
-            <span>未平倉24h <b class="rise">+1.07%</b></span>
-            <span>多空比 1.45</span>
+            <span>未平倉24h <b class="fall">-0.04%</b></span>
+            <span>多空比 1.31</span>
           </div>
         </div>
         <div class="fut-cross-row">
@@ -1907,8 +2024,8 @@ h1 {
           </div>
           <div class="fut-cross-mid mono">
             <span>資金費率 <b class="rise">+0.005%</b></span>
-            <span>未平倉24h <b class="fall">-1.67%</b></span>
-            <span>多空比 4.23</span>
+            <span>未平倉24h <b class="fall">-3.54%</b></span>
+            <span>多空比 4.64</span>
           </div>
         </div>
         <div class="fut-cross-row">
@@ -1918,9 +2035,9 @@ h1 {
             <span class="tag chip-bull">籌碼偏多</span>
           </div>
           <div class="fut-cross-mid mono">
-            <span>資金費率 <b class="rise">+0.008%</b></span>
-            <span>未平倉24h <b class="rise">+0.47%</b></span>
-            <span>多空比 2.35</span>
+            <span>資金費率 <b class="rise">+0.010%</b></span>
+            <span>未平倉24h <b class="fall">-0.48%</b></span>
+            <span>多空比 1.74</span>
           </div>
         </div>
         <div class="fut-cross-row">
@@ -1931,8 +2048,20 @@ h1 {
           </div>
           <div class="fut-cross-mid mono">
             <span>資金費率 <b class="rise">+0.005%</b></span>
-            <span>未平倉24h <b class="rise">+4.98%</b></span>
-            <span>多空比 1.22</span>
+            <span>未平倉24h <b class="fall">-0.66%</b></span>
+            <span>多空比 1.28</span>
+          </div>
+        </div>
+        <div class="fut-cross-row">
+          <div class="fut-cross-head">
+            <span class="symbol mono">LSKUSDT</span>
+            <span class="tag">超賣觀察(尚未反彈)</span>
+            <span class="tag chip-mixed">籌碼分歧</span>
+          </div>
+          <div class="fut-cross-mid mono">
+            <span>資金費率 <b class="fall">-0.032%</b></span>
+            <span>未平倉24h <b class="fall">-0.77%</b></span>
+            <span>多空比 1.24</span>
           </div>
         </div>
         <div class="fut-cross-row">
@@ -1943,8 +2072,8 @@ h1 {
           </div>
           <div class="fut-cross-mid mono">
             <span>資金費率 <b class="rise">+0.005%</b></span>
-            <span>未平倉24h <b class="rise">+0.54%</b></span>
-            <span>多空比 3.60</span>
+            <span>未平倉24h <b class="fall">-0.71%</b></span>
+            <span>多空比 3.22</span>
           </div>
         </div>
         <div class="fut-cross-row">
@@ -1955,20 +2084,8 @@ h1 {
           </div>
           <div class="fut-cross-mid mono">
             <span>資金費率 <b class="rise">+0.005%</b></span>
-            <span>未平倉24h <b class="fall">-1.36%</b></span>
+            <span>未平倉24h <b class="fall">-2.41%</b></span>
             <span>多空比 0.42</span>
-          </div>
-        </div>
-        <div class="fut-cross-row">
-          <div class="fut-cross-head">
-            <span class="symbol mono">PUMPUSDT</span>
-            <span class="tag">MACD+RSI雙黃金交叉</span>
-            <span class="tag chip-mixed">籌碼分歧</span>
-          </div>
-          <div class="fut-cross-mid mono">
-            <span>資金費率 <b class="rise">+0.005%</b></span>
-            <span>未平倉24h <b class="rise">+0.50%</b></span>
-            <span>多空比 0.88</span>
           </div>
         </div>
         <div class="fut-cross-row">
@@ -1979,8 +2096,8 @@ h1 {
           </div>
           <div class="fut-cross-mid mono">
             <span>資金費率 <b class="rise">+0.005%</b></span>
-            <span>未平倉24h <b class="fall">-6.68%</b></span>
-            <span>多空比 1.06</span>
+            <span>未平倉24h <b class="fall">-6.55%</b></span>
+            <span>多空比 1.10</span>
           </div>
         </div>
         <div class="fut-cross-row">
@@ -1991,7 +2108,7 @@ h1 {
           </div>
           <div class="fut-cross-mid mono">
             <span>資金費率 <b class="rise">+0.005%</b></span>
-            <span>未平倉24h <b class="fall">-1.17%</b></span>
+            <span>未平倉24h <b class="fall">-0.07%</b></span>
             <span>多空比 0.71</span>
           </div>
         </div>
@@ -2003,8 +2120,8 @@ h1 {
           </div>
           <div class="fut-cross-mid mono">
             <span>資金費率 <b class="rise">+0.005%</b></span>
-            <span>未平倉24h <b class="fall">-2.72%</b></span>
-            <span>多空比 1.68</span>
+            <span>未平倉24h <b class="fall">-0.83%</b></span>
+            <span>多空比 1.62</span>
           </div>
         </div>
         <div class="fut-cross-row">
@@ -2015,20 +2132,8 @@ h1 {
           </div>
           <div class="fut-cross-mid mono">
             <span>資金費率 <b class="rise">+0.005%</b></span>
-            <span>未平倉24h <b class="rise">+1.25%</b></span>
-            <span>多空比 5.18</span>
-          </div>
-        </div>
-        <div class="fut-cross-row">
-          <div class="fut-cross-head">
-            <span class="symbol mono">TWTUSDT</span>
-            <span class="tag">MACD柱狀體收腳(止跌)</span>
-            <span class="tag chip-bull">籌碼偏多</span>
-          </div>
-          <div class="fut-cross-mid mono">
-            <span>資金費率 <b class="rise">+0.005%</b></span>
-            <span>未平倉24h <b class="rise">+1.04%</b></span>
-            <span>多空比 1.56</span>
+            <span>未平倉24h <b class="fall">-0.03%</b></span>
+            <span>多空比 5.22</span>
           </div>
         </div>
         <div class="fut-cross-row">
@@ -2039,8 +2144,20 @@ h1 {
           </div>
           <div class="fut-cross-mid mono">
             <span>資金費率 <b class="rise">+0.013%</b></span>
-            <span>未平倉24h <b class="rise">+5.10%</b></span>
-            <span>多空比 1.98</span>
+            <span>未平倉24h <b class="rise">+40.61%</b></span>
+            <span>多空比 2.07</span>
+          </div>
+        </div>
+        <div class="fut-cross-row">
+          <div class="fut-cross-head">
+            <span class="symbol mono">YBUSDT</span>
+            <span class="tag">MACD+RSI雙黃金交叉</span>
+            <span class="tag chip-bull">籌碼偏多</span>
+          </div>
+          <div class="fut-cross-mid mono">
+            <span>資金費率 <b class="rise">+0.005%</b></span>
+            <span>未平倉24h <b class="rise">+0.05%</b></span>
+            <span>多空比 2.68</span>
           </div>
         </div>
         <div class="fut-cross-row">
@@ -2051,8 +2168,8 @@ h1 {
           </div>
           <div class="fut-cross-mid mono">
             <span>資金費率 <b class="rise">+0.005%</b></span>
-            <span>未平倉24h <b class="fall">-0.70%</b></span>
-            <span>多空比 0.90</span>
+            <span>未平倉24h <b class="rise">+0.21%</b></span>
+            <span>多空比 0.89</span>
           </div>
         </div>
       </div>
